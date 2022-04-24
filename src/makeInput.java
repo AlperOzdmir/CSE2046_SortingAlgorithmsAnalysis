@@ -6,15 +6,15 @@ import java.util.concurrent.ThreadLocalRandom;
 public class makeInput {
     public static void main(String[] args) {
         try {
-            FileWriter myWriter = new FileWriter("Inputs/smallInput.txt");
+            FileWriter myWriter = new FileWriter("Inputs/randomDistribution.txt");
             int min = 1;
-            int max = 100;
+            int max = 5000;
             int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
             ArrayList<Integer> list = new ArrayList<>();
             list.add(randomNum);
             myWriter.write(randomNum + "\n");
             boolean isDuplicate = false;
-            while (list.size() < 100) {
+            while (list.size() < 5000) {
                 randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
                 for (Integer integer : list) {
                     if (integer == randomNum) {
