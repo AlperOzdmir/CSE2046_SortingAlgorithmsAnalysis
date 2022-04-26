@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public class SelectionSort {
 
-    private static void sort(ArrayList<Integer> array) {
-        for (int i = 0; i < array.size() - 1; i++) {
+    //Partial Selection Sort
+    private static void sort(ArrayList<Integer> array, int k) {
+        for (int i = 0; i < k; i++) {
             int min = i;
             for (int j = i + 1; j < array.size(); j++) {
                 if (array.get(j) < array.get(min)) {
@@ -44,13 +45,17 @@ public class SelectionSort {
         int k = sc.nextInt();
         try {
             if (array != null) {
-                sort(array);
+                sort(array, k);
                 System.out.println(array.get(k-1));
             } else {
                 System.out.println("Input file empty.");
             }
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Index out of bounds.");
+        }
+
+        for(int a = 0; a < array.size(); a++){
+            System.out.println(array.get(a));
         }
     }
 }
