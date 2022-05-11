@@ -55,14 +55,15 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> array = readInput("Inputs/randomDistribution.txt");
-        System.out.print("Enter element index k: ");
-        Scanner sc = new Scanner(System.in);
-        int k = sc.nextInt();
+        ArrayList<Integer> array = readInput("Inputs/size10k.txt");
         try {
             if (array != null) {
+                int k = array.size();
+                long startTime = System.currentTimeMillis();
                 quickSort(array, 0, array.size() - 1);
                 System.out.println(array.get(k - 1));
+                long endTime = System.currentTimeMillis();
+                System.out.println("Execution time: " + (endTime - startTime) + "ms");
             } else {
                 System.out.println("Input file empty.");
             }

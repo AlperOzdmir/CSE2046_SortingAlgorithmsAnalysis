@@ -68,10 +68,10 @@ public class MergeSort {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> array = readInput("Inputs/size1k.txt");
+        ArrayList<Integer> array = readInput("Inputs/size10k.txt");
         try {
             if (array != null) {
-                int k = array.size() / 2;
+                int k = array.size();
                 long startTime = System.currentTimeMillis();
                 divideArray(array, 0, array.size() - 1);
                 System.out.println(array.get(k - 1));

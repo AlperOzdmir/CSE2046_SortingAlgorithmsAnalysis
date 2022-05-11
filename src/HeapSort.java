@@ -75,14 +75,14 @@ public class HeapSort {
 
     public static void main(String[] args) {
         ArrayList<Integer> array = readInput("Inputs/size10k.txt");
-        System.out.print("Enter element index k: ");
-        Scanner sc = new Scanner(System.in);
-        int k = sc.nextInt();
-
         try {
             if (array != null) {
+                int k = array.size() / 2;
+                long startTime = System.currentTimeMillis();
                 sort(array);
                 System.out.println(array.get(k-1));
+                long endTime = System.currentTimeMillis();
+                System.out.println("Execution time: " + (endTime - startTime) + " ms");
             } else {
                 System.out.println("Input file empty.");
             }
