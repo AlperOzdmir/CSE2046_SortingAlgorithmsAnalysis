@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PartialHeapSort {
+public class HeapSort {
 
     private static ArrayList<Integer> readInput(String fileName) {
         try {
